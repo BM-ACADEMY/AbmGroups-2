@@ -1,5 +1,5 @@
-// import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import HeroSection from "./components/Home";
 import AchievementsSection from "./components/Achievements";
 import Reviews from "./components/Reivews";
@@ -13,9 +13,17 @@ import WhatsappFloatButton from "./components/WhatsappFloatButton";
 import GalleryComponent from "./components/Gallery";
 import TermsModal from "./components/legalterms/Terms";
 import PrivacyModal from "./components/legalterms/Privacy";
-const App = () => {
+import Linkspage from "./components/link/Linkspage";
+
+// Create a wrapper component to handle the location logic
+const AppContent = () => {
+  const location = useLocation();
+
+  // Check if the current path is '/links'
+  const isLinksPage = location.pathname === "/links";
+
   return (
-    <Router>
+    <>
       <Routes>
         {/* Home Route */}
         <Route
@@ -38,8 +46,19 @@ const App = () => {
         <Route path="/ceo.html" element={<Main />} />
         <Route path="/terms-and-conditions" element={<TermsModal />} />
         <Route path="/privacy-policy" element={<PrivacyModal />} />
+        <Route path="/links" element={<Linkspage />} />
       </Routes>
-      <WhatsappFloatButton />
+
+      {/* Only show the button if we are NOT on the links page */}
+      {!isLinksPage && <WhatsappFloatButton />}
+    </>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 };

@@ -23,13 +23,14 @@ const InstagramEmbed = ({ permalink }) => {
 const InstagramFeeds = () => {
   const instagramLinks = [
     "https://www.instagram.com/bmacademypondy/",
-    "https://www.instagram.com/bmtechxpondy_/",
+    "https://www.instagram.com/bmtechxpondy/",
     "https://www.instagram.com/_dadaskitchen_/",
+    "https://www.instagram.com/core_talents/",
     "https://www.instagram.com/al_amaanath/",
+    "https://www.instagram.com/edu_consultant2013/",
     "https://www.instagram.com/haramain_haj/",
     "https://www.instagram.com/travellers_need/",
-    "https://www.instagram.com/edu_consultant2013/",
-    "https://www.instagram.com/core_talents/",
+    "https://www.instagram.com/bmfoundation__/"
   ];
 
   const cardVariants = {
