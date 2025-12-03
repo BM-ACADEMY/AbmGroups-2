@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Instagram, Facebook } from "lucide-react";
 
 const Footer = () => {
   useEffect(() => {
@@ -27,6 +28,25 @@ const Footer = () => {
             through education, tech, real estate, food, travel, and social
             impact—built on integrity, innovation, and lasting value.
           </p>
+
+          <div className="flex items-center gap-4 mt-6 text-white">
+                      <a
+                        href="https://www.facebook.com/profile.php?id=61583837594149"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                      >
+                        <Facebook className="w-5 h-5 hover:text-yellow-400 transition" />
+                      </a>
+                      <a
+                        href="https://www.instagram.com/abmgroups_/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                      >
+                        <Instagram className="w-5 h-5 hover:text-yellow-400 transition" />
+                      </a>
+                    </div>
         </div>
 
         {/* Right Columns */}

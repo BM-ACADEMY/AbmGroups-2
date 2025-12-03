@@ -22,6 +22,7 @@ const InstagramEmbed = ({ permalink }) => {
 
 const InstagramFeeds = () => {
   const instagramLinks = [
+    "https://www.instagram.com/abmgroups_/",
     "https://www.instagram.com/bmacademypondy/",
     "https://www.instagram.com/bmtechxpondy/",
     "https://www.instagram.com/_dadaskitchen_/",
