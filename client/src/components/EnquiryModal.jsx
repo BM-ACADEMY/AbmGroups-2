@@ -1,39 +1,50 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import axios from "axios";
 import { Mail, Phone, User, MessageSquare, Loader, CheckCircle } from "lucide-react";
 
 export default function EnquiryModal({ isOpen, onClose }) {
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
+
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const API_URL = import.meta.env.VITE_API_URL; // 🔥 Using .env value
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
-  setIsLoading(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
 
-  try {
-    const res = await fetch("https://abmgroupswebsite.onrender.com/send-email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const res = await axios.post(`${API_URL}/send-email`, formData);
 
-    if (!res.ok) throw new Error("Failed to send enquiry");
+      if (res.status !== 200) throw new Error("Failed to send enquiry");
 
-    setIsSubmitted(true);
-    setTimeout(onClose, 2000);
-  } catch (err) {
-    console.error("Submission error:", err);
-    alert("Failed to send enquiry. Please try again later.");
-  } finally {
-    setIsLoading(false);
-  }
-};
+      setIsSubmitted(true);
 
+      // Close after 2 seconds
+      setTimeout(() => {
+        onClose();
+        setIsSubmitted(false);
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      }, 2000);
+
+    } catch (err) {
+      console.error("Submission error:", err);
+      alert("Failed to send enquiry. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -57,6 +68,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
           >
             <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Get in Touch</h2>
+
             <form onSubmit={handleSubmit} className="space-y-6">
               {!isSubmitted ? (
                 <>
@@ -125,6 +137,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
                     >
                       Cancel
                     </button>
+
                     <button
                       type="submit"
                       disabled={isLoading}
@@ -133,7 +146,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
                       {isLoading ? (
                         <>
                           <Loader className="animate-spin" size={18} />
-                          Loading...
+                          Sending...
                         </>
                       ) : (
                         "Submit"
