@@ -6,7 +6,7 @@ const sendMail = require('./nodemailer');
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 1000;
 
 // Middleware
 app.use(cors({
@@ -15,6 +15,7 @@ app.use(cors({
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -30,11 +31,10 @@ app.post('/send-email', async (req, res) => {
 
   try {
     await sendMail(name, email, phone, message);
-    console.log('Email Process Completed');
     res.status(200).json({ message: 'Email sent successfully!' });
   } catch (error) {
     console.error('Email Error:', error);
-    res.status(500).json({ message: 'Error sending email', error: error.message || error });
+    res.status(500).json({ message: 'Error sending email', error: error.message });
   }
 });
 

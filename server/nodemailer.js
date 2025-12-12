@@ -2,12 +2,12 @@ const nodemailer = require('nodemailer');
 
 const sendMail = async (name, email, phone, message) => {
   const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    host: "smtp.zoho.in",
     port: 465,
     secure: true,
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user: process.env.EMAIL_USER, // admin@abmgroups.org
+      pass: process.env.EMAIL_PASS, // Zoho App Password
     },
   });
 
