@@ -15,6 +15,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const API_URL = import.meta.env.VITE_API_URL; // 🔥 Using .env value
+  
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
