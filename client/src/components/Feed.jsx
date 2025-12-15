@@ -28,7 +28,7 @@ const InstagramFeeds = () => {
     "https://www.instagram.com/_dadaskitchen_/",
     "https://www.instagram.com/core_talents/",
     "https://www.instagram.com/al_amaanath/",
-    "https://www.instagram.com/edu_consultant2013/",
+    "https://www.instagram.com/edu_consultants/?igsh=b3JvM2d6N2toM3ls#",
     "https://www.instagram.com/haramain_haj/",
     "https://www.instagram.com/travellers_need/",
     "https://www.instagram.com/bmfoundation__/"

@@ -89,7 +89,7 @@ const TrustBrands = () => {
         </div>
         <div className="hover:bg-slate-800 flex items-center justify-center h-20 w-48 sm:w-64 sm:h-24 border border-slate-600 border-t-0 border-r-0 md:border-l-0 md:border-b-0 lg:border-l lg:border-b">
           <a
-            href="#"
+            href="https://www.instagram.com/bmfoundation__/"
             target="_blank"
             rel="noopener noreferrer"
             data-tooltip-id="foundation-tooltip"
@@ -133,7 +133,7 @@ const TrustBrands = () => {
         </div>
         <div className="hover:bg-slate-800 h-20 w-48 sm:w-64 sm:h-24 border border-slate-600 border-y-0 border-r-0 lg:border-b-0">
           <a
-            href=""
+            href="https://www.instagram.com/edu_consultants/?igsh=b3JvM2d6N2toM3ls#"
             target="_blank"
             rel="noopener noreferrer"
             data-tooltip-id="edu"
@@ -269,7 +269,7 @@ const BrandMarquee = () => {
       src: Foundation,
       alt: "BM Foundation",
       tooltip: "Serving Humanity, Uplifting Communities",
-      url: "#",
+      url: "https://www.instagram.com/bmfoundation__/",
     },
     {
       src: Travel,
@@ -281,7 +281,7 @@ const BrandMarquee = () => {
       src: Edu,
       alt: "Edu Consultants",
       tooltip: "Edu Consultants",
-      url: "https://www.instagram.com/edu_consultant2013/?utm_source=ig_embed&ig_rid=84a4885c-30e0-4dcc-88c1-54bf38a4f627",
+      url: "https://www.instagram.com/bmfoundation__/",
     },
   ];
 
