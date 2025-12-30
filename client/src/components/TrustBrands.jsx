@@ -173,7 +173,7 @@ const TrustBrands = () => {
         </div>
         <div className="hover:bg-slate-800 h-20 w-48 sm:w-64 sm:h-24 border border-slate-600 hidden xl:block xl:border-r-0 xl:border-y-0">
           <a
-            href="https://www.instagram.com/_dadaskitchen_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            href="https://coretalents.in/"
             target="_blank"
             rel="noopener noreferrer"
             data-tooltip-id="coretalents-tooltip"
@@ -251,7 +251,7 @@ const BrandMarquee = () => {
       src: Coretalent,
       alt: "Core Talents",
       tooltip: "Smart hiring that builds strong teams",
-      url: "https://www.instagram.com/core_talents/?utm_source=ig_embed&ig_rid=2660117e-ab22-4c2e-8a8f-5816cd130ea5",
+      url: "https://coretalents.in/",
     },
     {
       src: Dada,

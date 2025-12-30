@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, Mail } from "lucide-react";
 
 const Footer = () => {
   useEffect(() => {
@@ -45,6 +45,15 @@ const Footer = () => {
                         aria-label="Instagram"
                       >
                         <Instagram className="w-5 h-5 hover:text-yellow-400 transition" />
+                      </a>
+
+                      <a
+                        href="mailto:admin@abmgroups.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                      >
+                        <Mail className="w-5 h-5 hover:text-yellow-400 transition" />
                       </a>
                     </div>
         </div>
