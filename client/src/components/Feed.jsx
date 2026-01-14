@@ -21,18 +21,19 @@ const InstagramEmbed = ({ permalink }) => {
 };
 
 const InstagramFeeds = () => {
-  const instagramLinks = [
-    "https://www.instagram.com/abmgroups_/",
-    "https://www.instagram.com/bmacademypondy/",
-    "https://www.instagram.com/bmtechxpondy/",
-    "https://www.instagram.com/_dadaskitchen_/",
-    "https://www.instagram.com/core_talents/",
-    "https://www.instagram.com/al_amaanath/",
-    "https://www.instagram.com/edu_consultants/?igsh=b3JvM2d6N2toM3ls#",
-    "https://www.instagram.com/haramain_haj/",
-    "https://www.instagram.com/travellers_need/",
-    "https://www.instagram.com/bmfoundation__/"
-  ];
+ const instagramLinks = [
+  "https://www.instagram.com/abmgroups_/",
+  "https://www.instagram.com/bmacademypondy/",
+  "https://www.instagram.com/_bmtechx_/",   // updated third link
+  "https://www.instagram.com/_dadaskitchen_/",
+  "https://www.instagram.com/core_talents/",
+  "https://www.instagram.com/realestate_withkamar/",
+  "https://www.instagram.com/edu_consultants/?igsh=b3JvM2d6N2toM3ls#",
+  "https://www.instagram.com/haramain_haj/",
+  "https://www.instagram.com/travellers_need/",
+  "https://www.instagram.com/bmfoundation__/"
+];
+
 
   const cardVariants = {
     hidden: { opacity: 0, y: 40 },
