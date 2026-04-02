@@ -14,6 +14,7 @@ import GalleryComponent from "./components/Gallery";
 import TermsModal from "./components/legalterms/Terms";
 import PrivacyModal from "./components/legalterms/Privacy";
 import Linkspage from "./components/link/Linkspage";
+import ChatbotWidget from "./components/ChatbotWidget";
 
 // Create a wrapper component to handle the location logic
 const AppContent = () => {
@@ -50,7 +51,12 @@ const AppContent = () => {
       </Routes>
 
       {/* Only show the button if we are NOT on the links page */}
-      {!isLinksPage && <WhatsappFloatButton />}
+      {!isLinksPage && (
+        <>
+          <WhatsappFloatButton />
+          <ChatbotWidget />
+        </>
+      )}
     </>
   );
 };
