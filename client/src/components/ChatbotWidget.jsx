@@ -24,7 +24,7 @@ const ChatbotWidget = () => {
                   <Bot size={18} className="text-black" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-sm text-[#ffcc00] m-0 leading-tight">ABM Support</h3>
+                  <h3 className="font-bold text-sm text-[#ffcc00] m-0 leading-tight">ABM AI Agent</h3>
                   <p className="text-xs text-gray-400 m-0 leading-tight">We typically reply in minutes</p>
                 </div>
               </div>
@@ -49,18 +49,38 @@ const ChatbotWidget = () => {
         )}
       </AnimatePresence>
 
-      <motion.button
-        onClick={() => setIsOpen(!isOpen)}
-        className="bg-[#1a1a1a] border-2 border-[#ffcc00] text-[#ffcc00] w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(255,204,0,0.3)] hover:shadow-[0_0_20px_rgba(255,204,0,0.5)] transition-shadow z-50 relative group"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        {isOpen ? (
-          <X size={26} className="transition-transform group-hover:rotate-90 duration-300" />
-        ) : (
-          <MessageSquare size={26} className="transition-transform group-hover:scale-110 duration-300" />
-        )}
-      </motion.button>
+      <div className="flex items-center gap-3">
+        <AnimatePresence>
+          {!isOpen && (
+            <motion.div
+              initial={{ opacity: 0, x: 10, scale: 0.95 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: 10, scale: 0.95 }}
+              whileHover={{ scale: 1.05, x: -5 }}
+              className="bg-[#1a1a1a]/90 backdrop-blur-md border border-[#ffcc00]/30 px-4 py-2 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.3)] flex items-center gap-2 cursor-pointer group hover:border-[#ffcc00]/60 transition-colors"
+              onClick={() => setIsOpen(true)}
+            >
+              <div className="w-2 h-2 rounded-full bg-[#ffcc00] animate-pulse shadow-[0_0_8px_#ffcc00]" />
+              <span className="text-[#ffcc00] text-sm font-semibold tracking-wide whitespace-nowrap">
+                ABM Smart Assistant
+              </span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <motion.button
+          onClick={() => setIsOpen(!isOpen)}
+          className="bg-[#1a1a1a] border-2 border-[#ffcc00] text-[#ffcc00] w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(255,204,0,0.3)] hover:shadow-[0_0_20px_rgba(255,204,0,0.5)] transition-shadow z-50 relative group"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          {isOpen ? (
+            <X size={26} className="transition-transform group-hover:rotate-90 duration-300" />
+          ) : (
+            <MessageSquare size={26} className="transition-transform group-hover:scale-110 duration-300" />
+          )}
+        </motion.button>
+      </div>
     </div>
   );
 };
