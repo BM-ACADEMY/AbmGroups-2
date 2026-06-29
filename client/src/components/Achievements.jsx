@@ -1,75 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
-import leftLaurel from '../assets/images/left.png';
-import rightLaurel from '../assets/images/right.png';
+import React from 'react';
+import { BadgeDollarSign, GraduationCap, Briefcase, Star, Building2, Map, Bot, CalendarDays } from 'lucide-react';
 
-const CountUpItem = ({ target, label, duration = 2000 }) => {
-  const [count, setCount] = useState(0);
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  });
+const achievements = [
+  { icon: <BadgeDollarSign/>, num: '₹50Cr+', label: 'Revenue Generated', sub: 'For 750+ businesses across Tamil Nadu through BM TechX' },
+  { icon: <GraduationCap/>, num: '1,400+', label: 'Lives Trained', sub: 'Students from Pondicherry, Chennai, Villupuram, Cuddalore & beyond' },
+  { icon: <Briefcase/>, num: '150+', label: 'Students Placed', sub: 'Digital marketing, development & design roles across Tamil Nadu' },
+  { icon: <Star/>, num: '4.8★', label: 'Google Rating', sub: 'Consistent 4.8 rating across BM Academy & BM TechX GMB profiles' },
+  { icon: <Building2/>, num: '7', label: 'Brands Built', sub: 'From education to real estate — all bootstrapped, all profitable' },
+  { icon: <Map/>, num: 'Pan-TN', label: 'Reach', sub: 'Students & clients from 15+ districts across Tamil Nadu' },
+  { icon: <Bot/>, num: '13+', label: 'AI Automations', sub: "n8n workflows powering ABM Groups' internal operations daily" },
+  { icon: <CalendarDays/>, num: '14+', label: 'Years in Business', sub: 'Started 2010. Still growing. Never stopped. Kottakuppam to Tamil Nadu.' },
+];
 
-  useEffect(() => {
-    if (!inView) return;
-
-    let start = 0;
-    const increment = target / (duration / 16); // 60fps
-
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(Math.ceil(start));
-      }
-    }, 16);
-
-    return () => clearInterval(timer);
-  }, [inView, target, duration]);
-
+export default function Achievements() {
   return (
-    <div ref={ref} className="text-center px-4 py-6">
-      <span className="block text-3xl md:text-5xl font-bold text-white">
-        {count}+
-      </span>
-      <span className="block text-sm md:text-base text-gray-300 mt-2">
-        {label}
-      </span>
-    </div>
-  );
-};
-
-export default function AwardHeadingWithStats() {
-  return (
-    <div className="bg-gradient-to-t from-black to-[#000000e1] w-full" id='achievements'>
-      {/* Award Heading */}
-      <div className="flex items-center justify-center gap-4 md:gap-6 py-8 px-4 text-center">
-        <img
-          src={leftLaurel}
-          alt="Left Laurel"
-          className="w-14 md:w-14 h-auto object-contain"
-        />
-        <h2 className="text-base md:text-3xl font-extrabold leading-tight">
-          <span className="block text-white">Our Achievements</span>
-        </h2>
-        <img
-          src={rightLaurel}
-          alt="Right Laurel"
-          className="w-14 md:w-14 h-auto object-contain"
-        />
-      </div>
-
-      {/* Stats Section */}
-      <div className="container mx-auto px-4 pb-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <CountUpItem target={1100} label="students trained at BM Academy" />
-          <CountUpItem target={12000} label="meals delivered by Dada's Kitchen" />
-          <CountUpItem target={750} label="websites & marketing projects executed by BM TECHx" />
-          <CountUpItem target={750} label="happy travelers served by TravellersNeed since 2013" />
+    <section className="section" id="achievements">
+      <div className="sec-inner">
+        <div className="eyebrow">Achievements</div>
+        <h2 className="sec-title">Numbers That <span className="gold">Speak for Themselves</span></h2>
+        <p className="sec-sub">Built over 14 years. Not funded. Not accidental. Earned — one student, one client, one brand at a time.</p>
+        <div className="ach-grid">
+          {achievements.map((a, i) => (
+            <div className="ach-card reveal cursor-pointer" key={i} style={{ transitionDelay: `${i * 0.08}s` }}>
+              <span className="ach-icon">{a.icon}</span>
+              <div className="ach-num">{a.num}</div>
+              <div className="ach-label">{a.label}</div>
+              <div className="ach-sub">{a.sub}</div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

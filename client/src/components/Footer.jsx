@@ -1,139 +1,65 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Instagram, Facebook, Mail } from "lucide-react";
+import React from 'react';
+import { Zap, Camera, MessageCircle, Phone, Mail } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
-const Footer = () => {
-  useEffect(() => {
-    document.getElementById("year").textContent = new Date().getFullYear();
-  }, []);
+export default function Footer() {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  const scrollToSection = (e, id) => {
+    if (isHome) {
+      e.preventDefault();
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState(null, '', `#${id}`);
+      }
+    }
+  };
 
   return (
-    <footer
-      className="px-6 md:px-16 lg:px-24 xl:px-32 bg-gradient-to-b from-black to-[#000000e1]"
-      id="contact"
-    >
-      <div className="flex flex-col md:flex-row items-start justify-between gap-6 md:gap-10 py-10 border-b border-gray-500/30 text-gray-500">
-        {/* Left Column */}
-        <div className="flex-1 min-w-[200px] md:min-w-[250px]">
-          <a href="#" className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-white tracking-tight">
-              ABM
-            </span>
-            <span className="text-2xl font-bold text-yellow-400 tracking-tight">
-              GROUPS
-            </span>
-          </a>
-          <p className="max-w-sm mt-6 text-gray-300 text-sm md:text-base">
-            ABM GROUPS is a multi-vertical company empowering communities
-            through education, tech, real estate, food, travel, and social
-            impact—built on integrity, innovation, and lasting value.
+    <footer>
+      <div className="footer-inner">
+        <div>
+          <div className="f-logo"><span className="abm">ABM</span> Groups</div>
+          <p className="f-tagline">
+            Kottakuppam, Pondicherry<br />
+            Tamil Nadu, India
           </p>
-
-          <div className="flex items-center gap-4 mt-6 text-white">
-                      <a
-                        href="https://www.facebook.com/profile.php?id=61583837594149"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Facebook"
-                      >
-                        <Facebook className="w-5 h-5 hover:text-yellow-400 transition" />
-                      </a>
-                      <a
-                        href="https://www.instagram.com/abmgroups_/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram"
-                      >
-                        <Instagram className="w-5 h-5 hover:text-yellow-400 transition" />
-                      </a>
-
-                      <a
-                        href="mailto:admin@abmgroups.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram"
-                      >
-                        <Mail className="w-5 h-5 hover:text-yellow-400 transition" />
-                      </a>
-                    </div>
+          <div className="spacer"></div>
+          <p className="f-tagline">+91 99449 40051 <br />+91 99442 88271<br />+91 94038 92971 <br /></p>
         </div>
-
-        {/* Right Columns */}
-        <div className="flex flex-col md:flex-row justify-between w-full md:w-[70%] gap-6 md:gap-10">
-          {/* Quick Links */}
-          <div className="flex-1 min-w-[150px]">
-            <h3 className="font-semibold text-base text-gray-300 mb-3 md:mb-5">
-              Quick Links
-            </h3>
-            <ul className="text-sm text-gray-400 space-y-1">
-              <li><a href="#home" className="hover:underline transition">Home</a></li>
-              <li><a href="#moments" className="hover:underline transition">Moments</a></li>
-              <li><a href="#brands" className="hover:underline transition">Brands</a></li>
-              <li><Link to="/ceo.html" className="hover:underline transition">CEO</Link></li>
-              <li><a href="#contact" className="hover:underline transition">Contact</a></li>
-            </ul>
-          </div>
-
-          {/* Legal Column */}
-          <div className="flex-1 min-w-[150px]">
-            <h3 className="font-semibold text-base text-gray-300 mb-3 md:mb-5">
-              Legal
-            </h3>
-            <ul className="text-sm text-gray-400 space-y-1">
-              <li>
-                <Link
-                  to="/terms-and-conditions"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline transition"
-                >
-                  Terms & Conditions
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/privacy-policy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline transition"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Map */}
-          <div className="flex-1 min-w-[250px]">
-            <div className="relative w-full h-48 md:h-48 lg:h-64 aspect-square">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9605.494660602379!2d79.83609451294072!3d11.961680735595172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a53636a1752dc05%3A0xaa5795ccc1815bf7!2sBM%20Academy!5e1!3m2!1sen!2sin!4v1749880774336!5m2!1sen!2sin"
-                className="absolute inset-0 w-full h-full"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-          </div>
+        <div>
+          <div className="f-col-title">Our Brands</div>
+          <a href="https://thebmacademy.com/" target="_blank" className="f-link">BM Academy</a>
+          <a href="https://bmtechx.in" target="_blank" className="f-link">BM TechX</a>
+          <a href="https://coretalents.in/" target="blank" className="f-link">CoreTalents</a>
+          <a href="https://nammapondyproperties.com/" target="_blank" className="f-link">Namma Pondy Properties</a>
+          <a href="https://edu.abmgroups.org/cgi-sys/defaultwebpage.cgi" target="blank" className="f-link">EduConsultants</a>
+          <a href="https://www.instagram.com/_dadaskitchen_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="blank" className="f-link">Dada's Kitchen</a>
+          <a href="https://travellersneed-client.onrender.com/" target="blank" className="f-link">TravellersNeed</a>
+          <a href="https://www.instagram.com/bmfoundation__" target="_blank" className="f-link">BM Foundation</a>
+        </div>
+        <div>
+          <div className="f-col-title">Connect</div>
+          <a href="https://wa.me/919944940051" target="_blank" className="f-link"><MessageCircle size={12} /> WhatsApp</a>
+          <a href="mailto:admin@abmgroups.org" className="f-link"><Mail size={12} /> admin@abmgroups.org</a>
+          <a href="tel:+919944940051" className="f-link"><Phone size={12} /> +91 99449 40051</a>
+          <a href="https://www.instagram.com/abmgroups_/" target="_blank" className="f-link"><Camera size={12} /> Instagram</a>
+        </div>
+        <div>
+          <div className="f-col-title">Company</div>
+          <a href="/#about" onClick={(e) => scrollToSection(e, 'about')} className="f-link">About Kamar</a>
+          <a href="/#milestones" onClick={(e) => scrollToSection(e, 'milestones')} className="f-link">Our Journey</a>
+          <a href="/#investors" onClick={(e) => scrollToSection(e, 'investors')} className="f-link">Investors</a>
+          <a href="/#foundation" onClick={(e) => scrollToSection(e, 'foundation')} className="f-link">BM Foundation</a>
+          <a href="/#careers" onClick={(e) => scrollToSection(e, 'careers')} className="f-link">Careers</a>
         </div>
       </div>
-
-      {/* Copyright */}
-      <p className="py-4 text-center text-sm md:text-base text-gray-500/80">
-        © <span id="year"></span>{" "}
-        <a
-          href="https://bmtechx.in/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:underline text-yellow-400"
-        >
-          BMTechx.in
-        </a>
-        . All Rights Reserved.
-      </p>
+      <div className="footer-bottom">
+        <span>© 2026   ABM Groups. All rights reserved.</span>
+        <span>Built by BM TechX <Zap size={12} /></span>
+      </div>
     </footer>
   );
-};
-
-export default Footer;
+}
