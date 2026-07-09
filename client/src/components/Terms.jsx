@@ -415,6 +415,12 @@ const TermsPage = () => {
                   <p style={{ color: '#D4A017', fontWeight: '500', margin: 0 }}>
                     📍 Puducherry, India
                   </p>
+                  <p style={{ margin: 0 }}>
+                    Email: <a href="mailto:admin@abmgroups.org" style={{ color: '#D4A017', textDecoration: 'underline' }}>admin@abmgroups.org</a>
+                  </p>
+                  <p style={{ margin: 0 }}>
+                    Phone: <a href="tel:+919944940051" style={{ color: '#D4A017', textDecoration: 'underline' }}>+91 99449 40051</a>
+                  </p>
                 </div>
               </section>
 

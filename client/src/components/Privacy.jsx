@@ -383,10 +383,13 @@ const PrivacyPage = () => {
                   </div>
                   <h2 style={{ fontSize: '20px', fontWeight: '700', color: '#F0EDE6' }}>11. Contact Information</h2>
                 </div>
-                <div style={{ color: 'rgba(240,237,230,0.7)', fontSize: '15px', lineHeight: '1.8', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <div style={{ color: 'rgba(240,237,230,0.7)', fontSize: '15px', lineHeight: '1.8', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <p>If you have any questions about this Privacy Policy or how your information is handled, please contact us:</p>
-                  <p style={{ fontWeight: '700', fontSize: '16px', color: '#F0EDE6' }}>
-                    Email: <a href="mailto:admin@bmtechx.in" style={{ color: '#D4A017', textDecoration: 'underline' }}>admin@bmtechx.in</a>
+                  <p style={{ margin: 0 }}>
+                    Email: <a href="mailto:admin@abmgroups.org" style={{ color: '#D4A017', textDecoration: 'underline' }}>admin@abmgroups.org</a>
+                  </p>
+                  <p style={{ margin: 0 }}>
+                    Phone: <a href="tel:+919944940051" style={{ color: '#D4A017', textDecoration: 'underline' }}>+91 99449 40051</a>
                   </p>
                 </div>
               </section>
