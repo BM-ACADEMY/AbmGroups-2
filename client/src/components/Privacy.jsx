@@ -176,12 +176,18 @@ const PrivacyPage = () => {
                   </div>
                   <h2 style={{ fontSize: '20px', fontWeight: '700', color: '#F0EDE6' }}>Introduction</h2>
                 </div>
-                <div style={{ color: 'rgba(240,237,230,0.7)', fontSize: '15px', lineHeight: '1.8', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <div style={{ color: 'rgba(240,237,230,0.7)', fontSize: '15px', lineHeight: '1.8', display: 'flex', flexDirection: 'column', gap: '14px' }}>
                   <p>
-                    Welcome to the website of <strong>ABM Groups</strong>. Your privacy is important to us, and we are committed to protecting the personal information you share with us. This Privacy Policy explains how we collect, use, store, and safeguard your personal information when you visit our website or use our services.
+                    Welcome to <strong>ABM Groups</strong>. At ABM Groups, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, store, protect, and disclose the information you provide when you visit our website, submit enquiries, or use our services.
                   </p>
                   <p>
-                    By accessing or using our website, you agree to the practices described in this Privacy Policy.
+                    Whether you are exploring our business solutions, contacting our team, or interacting with our website, we are dedicated to handling your information responsibly and in compliance with applicable privacy laws.
+                  </p>
+                  <p>
+                    By accessing or using the ABM Groups website, you acknowledge that you have read, understood, and agreed to the terms of this Privacy Policy. If you do not agree with any part of this policy, please discontinue the use of our website and services.
+                  </p>
+                  <p>
+                    This Privacy Policy applies to all visitors, customers, business partners, and users who interact with the ABM Groups website and its digital services.
                   </p>
                 </div>
               </section>
