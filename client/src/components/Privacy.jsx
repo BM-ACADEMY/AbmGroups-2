@@ -116,9 +116,9 @@ const PrivacyPage = () => {
             <h1 className="sec-title" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', marginBottom: '12px' }}>
               Privacy <span className="gold">Policy</span>
             </h1>
-            <p style={{ color: 'rgba(240, 237, 230, 0.45)', fontSize: '14px', fontWeight: '500' }}>
+            {/* <p style={{ color: 'rgba(240, 237, 230, 0.45)', fontSize: '14px', fontWeight: '500' }}>
               Last Updated: March 2026
-            </p>
+            </p> */}
           </div>
 
           {/* Grid Layout (Sidebar + Main Content) */}
