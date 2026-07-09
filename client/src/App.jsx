@@ -21,6 +21,8 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
 import Ceo from './components/Ceo';
+import TermsPage from './components/Terms';
+import PrivacyPage from './components/Privacy';
 
 const App = () => {
   const location = useLocation();
@@ -103,6 +105,14 @@ const App = () => {
 
         {/* CEO Page */}
         <Route path="/ceo.html" element={<Ceo />} />
+
+        {/* Terms Page */}
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/terms.html" element={<TermsPage />} />
+
+        {/* Privacy Policy Page */}
+        <Route path="/privacy-policy" element={<PrivacyPage />} />
+        <Route path="/privacy-policy.html" element={<PrivacyPage />} />
       </Routes>
     </>
   );

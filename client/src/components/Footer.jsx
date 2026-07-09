@@ -1,6 +1,6 @@
 import React from 'react';
 import { Zap, Camera, MessageCircle, Phone, Mail } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Footer() {
   const location = useLocation();
@@ -54,6 +54,8 @@ export default function Footer() {
           <a href="/#investors" onClick={(e) => scrollToSection(e, 'investors')} className="f-link">Investors</a>
           <a href="/#foundation" onClick={(e) => scrollToSection(e, 'foundation')} className="f-link">BM Foundation</a>
           <a href="/#careers" onClick={(e) => scrollToSection(e, 'careers')} className="f-link">Careers</a>
+          <Link to="/terms" className="f-link">Terms &amp; Conditions</Link>
+          <Link to="/privacy-policy" className="f-link">Privacy Policy</Link>
         </div>
       </div>
       <div className="footer-bottom">
